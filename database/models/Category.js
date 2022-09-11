@@ -19,7 +19,7 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'categories',
         timestamps: false
     }
-    const Category = sequelize.define(alias, cols, config); 
+    const Category = sequelize.define(alias, cols, config);
 
     Category.associate = models => {
         Category.hasMany(models.Transaction, {
@@ -27,6 +27,6 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'category_id'
         });
     }
- 
+
     return Category
 };
