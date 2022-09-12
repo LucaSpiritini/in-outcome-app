@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head') %>
+    <title>Profile</title>
+</head>
+
+<body>
+  <%- include('../partials/header') %>
+    <main class="profile-main">
+      <div class="info">
+        <h2>
+          <%= user.name %>
+        </h2>
+        <div> Currency: <%= user.currency %>
+        </div>
+        <div> <a href="/users/edit/<%= user.user_id%>">Edit profile</a></div>
+      </div>
+      <div class="flexbox-profile">
+        <article class="balance">
+          <h3>Current balance</h3>
+          <div class="<%= balance < 0 ? 'negative' : 'positive' %>">$ <%= balance %>
+          </div>
+        </article>
+        <article class="transactions-container">
+          <h3>Lastest records</h3>
+          <div class="transactions-details">
+            <% user.transactions.forEach(transaction=> { %>
+              <div class="transactions">
+                <% if(transaction.type=='Income' ) { %>
+                  <a href="/transactions/type/1"><i class="fa-solid fa-square-plus positive"></i></a>
+                  <% } else {%>
+                    <a href="/transactions/type/2"><i class="fa-solid fa-square-minus negative"></i></a>
+                    <% }%>
+                      <div>
+                        <%= transaction.date%>
+                      </div>
+                      <div>
+                        <%= transaction.amount%>
+                      </div>
+                      <a href="/transactions/detail/<%= transaction.transaction_id%>"><i
+                          class="fa-solid fa-angles-right more"></i></a>
+              </div>
+              <% }) %>
+          </div>
+        </article>
+      </div>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+
+</html>

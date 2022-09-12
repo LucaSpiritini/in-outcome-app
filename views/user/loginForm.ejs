@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head') %>
+    <title>Sign in</title>
+</head>
+
+<body>
+
+  <%- include('../partials/header') %>
+
+    <main>
+      <div class="form-container">
+        <form class="forms" action="/users/login" method="POST">
+          <h2>Sign in</h2>
+          <% if(locals.errors && errors.email){ %>
+            <div class="text-danger">
+              <%= errors.email.msg %>
+            </div>
+            <% } %>
+              <div>
+                <input class="form-input" type="email" name="email" placeholder="Email">
+              </div>
+              <div>
+                <input class="form-input" type="password" name="password" placeholder="Password">
+              </div>
+
+              <button type="submit">Sign in</button>
+              <button type="reset">Reset</button>
+        </form>
+      </div>
+    </main>
+
+    <%- include('../partials/footer') %>
+
+</body>
+
+</html>
