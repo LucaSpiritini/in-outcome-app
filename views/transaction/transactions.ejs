@@ -6,39 +6,51 @@
     <title>Transactions</title>
 </head>
 
-<body>
+<body class="index-body">
 
   <%- include('../partials/header') %>
 
-    <main>
-      <div class="info">
-        <div> <a href="/transactions/add">Add transaction</a></div>
+    <main class="index-main-container">
+
+      <div class="add-transaction-title-container">
+        <h3 class="lastest-records-title">Transactions</h3>
+        <div class="add-transaction-title">
+          <a href="/transactions/add">
+            Add one <i class="fa-solid fa-circle-plus positive"></i>
+          </a>
+        </div>
       </div>
-      <div class="flexbox-profile">
-        <article class="transactions-container">
-          <h3>Transactions</h3>
-          <div class="transactions-details">
-            <% transactions.forEach(transaction=> {
-              if(transaction.user_id == locals.userLogged.user_id) {%>
-              <div class="transactions">
-                <% if(transaction.type=='Income' ) { %>
-                  <a href="/transactions/type/incomes"><i class="fa-solid fa-square-plus positive"></i></a>
-                  <% } else {%>
-                    <a href="/transactions/type/expenses"><i class="fa-solid fa-square-minus negative"></i></a>
-                    <% }%>
-                      <div>
-                        <%= transaction.date%>
-                      </div>
-                      <div>
-                        <%= transaction.amount%>
-                      </div>
-                      <a href="/transactions/detail/<%= transaction.transaction_id%>"><i
-                          class="fa-solid fa-angles-right more"></i></a>
-              </div>
-              <% }}) %>
-          </div>
-        </article>
+
+      <div class="">
+
+        <div class="transactions-container">
+          <% transactions.forEach(transaction=> {
+            if(transaction.user_id == locals.userLogged.user_id) {%>
+            <div class="each-income-transactions">
+              <% if(transaction.type=='Income' ) { %>
+                <a href="/transactions/type/incomes">
+                  <i class="fa-solid fa-square-plus positive"></i>
+                </a>
+                <% } else {%>
+                  <a href="/transactions/type/expenses">
+                    <i class="fa-solid fa-square-minus negative"></i>
+                  </a>
+                  <% }%>
+                    <div>
+                      <%= transaction.date%>
+                    </div>
+                    <div>
+                      <%= transaction.amount%>
+                    </div>
+                    <a href="/transactions/detail/<%= transaction.transaction_id%>">
+                      <i class="fa-solid fa-angles-right more"></i>
+                    </a>
+            </div>
+            <% }}) %>
+        </div>
+
       </div>
+
     </main>
 
     <%- include('../partials/footer') %>

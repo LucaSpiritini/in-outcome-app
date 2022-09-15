@@ -217,6 +217,38 @@ nav {
   justify-content: space-between;
 }
 
+.each-income-transactions {
+  padding: 5px 0 5px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 600px;
+  margin: auto;
+}
+
+.add-transaction-title-container {
+  align-items: center;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  margin: auto;
+  max-width: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.lastest-records-title { 
+  font-size: 30px; 
+  color: #0590ec;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.add-transaction-title a {
+  text-decoration: none;
+}
+
 /* ---- FOOTER ---- */
 
 .footer-container {

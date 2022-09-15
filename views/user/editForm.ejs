@@ -13,9 +13,10 @@
     <main class="index-main-container">
       <div class="index-container">
         <form class="forms" action="/users/edit/<%=user.user_id%>?_method=PUT" method="POST">
+          
           <h1 class="index-title">Edit your profile</h1>
+          
           <div class="inputs-container">
-
             <div>
               <input class="login-input" type="text" name="name" placeholder="Name" value="<%= user.name%>">
               <% if(locals.errors && errors.name){ %>
