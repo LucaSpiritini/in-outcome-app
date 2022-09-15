@@ -24,7 +24,6 @@
                 </div>
                 <% } %>
             </div>
-
             <div>
               <input class="login-input" type="email" name="email" placeholder="Email">
               <% if(locals.errors && errors.email){ %>
@@ -33,7 +32,6 @@
                 </div>
                 <% } %>
             </div>
-
             <div>
               <input class="login-input" type="password" name="password" placeholder="Password">
               <% if(locals.errors && errors.password){ %>
@@ -42,7 +40,6 @@
                 </div>
                 <% } %>
             </div>
-
             <div>
               <input class="login-input" type="password" name="confirmPassword" placeholder="Confirm password">
               <% if(locals.errors && errors.confirmPassword){ %>
@@ -51,7 +48,6 @@
                 </div>
                 <% } %>
             </div>
-
             <div>
               <select class="login-input" name="currency">
                 <% for (let currency in currencies) { %>
@@ -66,7 +62,6 @@
                 </div>
                 <% } %>
             </div>
-
             <div class="terms-conditions-container">
               <label>
                 <input class="terms-conditions-text" type="checkbox" name="terms">
