@@ -1,0 +1,290 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.text-danger {
+  color: red;
+  text-decoration: none;
+  font-size: 12px;
+  padding-top: 5px;
+}
+
+/* ---- HEADER ---- */
+
+nav {
+  background-color: #021222;
+  padding-left: 20px;
+  height: 80px;
+  /* position: relative; */
+  position: fixed;
+  width: 100%;
+}
+
+.nav-container {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1300px;
+  line-height: 80px;
+  z-index: 100;
+}
+
+.logo-container {
+  display: contents;
+  margin-left: 20px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.logo-container h1 {
+  color: #95bdd8;
+  font-weight: 300;
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+
+.logo-container h1 span {
+  color: #0590ec;
+  font-weight: 400;
+}
+
+.links {
+  display: flex;
+}
+
+.links .link {
+  display: inline-block;
+}
+
+.links .link a {
+  text-decoration: none;
+  color: #d1faf4;
+  font-size: 16px;
+  margin: 0 25px;
+  letter-spacing: 3px;
+  transition: .3s ease;
+}
+
+.links .link a:hover {
+  color: #487abb;
+}
+
+.toggle {
+  color: #d1faf4;
+  margin-right: 40px;
+  font-size: 30px;
+  transform: rotate(90deg);
+  cursor: pointer;
+  transition: .3s ease;
+  display: none;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+/* ---- INDEX BODY ---- */
+
+.index-body {
+  margin: 0;
+  padding: 0px;
+  text-align: center;
+  align-items: center;
+  background-color: #d1faf4;
+}
+
+.index-main-container {
+  padding-top: 100px;
+  align-items: center;
+  text-align: center;
+}
+
+.index-container {
+  padding-top: 60px;
+}
+
+.index-title {
+  color: #0590ec;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.index-button-container {
+  padding: 30px;
+}
+
+.index-button {
+  cursor: pointer;
+  margin: 0 10px 0 10px;
+  padding: 10px 20px;
+  border: 1px solid #0590ec;
+  background: transparent;
+  border-radius: 5px;
+  letter-spacing: 3px;
+  color: #0590ec;
+}
+
+.index-button:hover {
+  border: 1px dashed #0590ec;
+}
+
+.index-button a {
+  color: #0590ec;
+  text-decoration: none;
+  letter-spacing: 3px;
+}
+
+/* ---- LOGIN ---- */
+
+.login-input {
+  width: 350px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #999;
+  padding: 20px 5px 5px 5px;
+  background-color: transparent;
+}
+
+.inputs-container {
+  padding-top: 20px;
+}
+
+.terms-conditions-container {
+  padding-top: 15px;
+}
+
+.terms-conditions-text {
+  color: #999;
+}
+
+/* ---- PROFILE ---- */
+
+.main-profile {
+  padding-top: 200px;
+  padding-bottom: 50px;
+  margin: auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-info-container {
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+}
+
+.current-balance {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+}
+
+.user-icon {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.user-icon i {
+  font-size: 70px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.lastest-records {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.lastest-records-title {  
+  padding: 0 0 10px 0;
+}
+
+.each-income {
+  padding: 5px 0 5px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* ---- FOOTER ---- */
+
+.footer-container {
+  background-color: #021222;
+  padding: 1em 0;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: #d1faf4;
+}
+
+.footer-icons {
+  cursor: pointer;
+  letter-spacing: 3px;
+  transition: .3s ease;
+}
+
+
+@media screen and (max-width: 1050px) {
+
+  /* ---- HEADER ---- */
+
+  .toggle {
+    display: inline-block;
+  }
+
+  .links {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background: #021222;
+    text-align: center;
+    overflow: hidden;
+    height: calc(100vh - 80px);
+    width: 100%;
+    z-index: -1;
+    top: -100vh;
+    transition: .5s ease;
+  }
+
+  .active {
+    top: 80px;
+  }
+
+  .links .link:hover {
+    background: #051c38;
+  }
+  
+  /* ---- INDEX BODY ---- */
+
+  .main-profile {
+    flex-direction: column;
+  }
+
+  .current-balance {
+    align-items: center;
+    text-align: center;
+    padding-top: 30px;
+    margin: auto;
+    flex-direction: inherit;
+  }
+
+  .lastest-records {
+    padding-top: 30px;
+  }
+
+  /* ---- FOOTER ---- */
+
+
+}

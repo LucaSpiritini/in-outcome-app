@@ -1,0 +1,28 @@
+<header>
+  <nav>
+    <div class="nav-container">
+
+      <div class="logo-container">
+        <h1 class="logo"><span>Expenses</span> & Incomes</h1>
+      </div>
+
+      <ul class="links">
+        <% if(locals.isLogged) { %>
+          <li class="link"><a href="/users/profile/<%=locals.userLogged.user_id%>">Profile</a></li>
+          <li class="link"><a href="/transactions">Transactions</a></li>
+          <li class="link"><a href="/transactions/type/2">Expenses</a></li>
+          <li class="link"><a href="/transactions/type/1">Incomes</a></li>
+          <li class="link"><a href="/users/logout">Sign out</a></li>
+          <% } else {%>
+            <li class="link"><a href="/users/login">Sign in</a></li>
+            <li class="link"><a href="/users/register">Register</a></li>
+            <% } %>
+      </ul>
+
+      <div class="toggle">
+        |||
+      </div>
+
+    </div>
+  </nav>
+</header>

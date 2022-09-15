@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head') %>
+    <title>Register</title>
+</head>
+
+<body class="index-body">
+
+  <%- include('../partials/header') %>
+
+    <main class="index-main-container">
+      <div class="index-container">
+        <form class="" action="/users/register" method="POST">
+          <h1 class="index-title">Create your account</h1>
+          <div class="inputs-container">
+            
+            <div>
+              <input class="login-input" type="text" name="name" placeholder="Name" autofocus>
+              <% if(locals.errors && errors.name){ %>
+                <div class="text-danger">
+                  <%= errors.name.msg %>
+                </div>
+                <% } %>
+            </div>
+
+            <div>
+              <input class="login-input" type="email" name="email" placeholder="Email">
+              <% if(locals.errors && errors.email){ %>
+                <div class="text-danger">
+                  <%= errors.email.msg %>
+                </div>
+                <% } %>
+            </div>
+
+            <div>
+              <input class="login-input" type="password" name="password" placeholder="Password">
+              <% if(locals.errors && errors.password){ %>
+                <div class="text-danger">
+                  <%= errors.password.msg %>
+                </div>
+                <% } %>
+            </div>
+
+            <div>
+              <input class="login-input" type="password" name="confirmPassword" placeholder="Confirm password">
+              <% if(locals.errors && errors.confirmPassword){ %>
+                <div class="text-danger">
+                  <%= errors.confirmPassword.msg %>
+                </div>
+                <% } %>
+            </div>
+
+            <div>
+              <select class="login-input" name="currency">
+                <% for (let currency in currencies) { %>
+                  <option value="<%=currency%>">
+                    <%= currency%> - <%= currencies[currency]%>
+                  </option>
+                  <%}%>
+              </select>
+              <% if(locals.errors && errors.currency){ %>
+                <div class="text-danger">
+                  <%= errors.currency.msg %>
+                </div>
+                <% } %>
+            </div>
+
+            <div class="terms-conditions-container">
+              <label>
+                <input class="terms-conditions-text" type="checkbox" name="terms">
+                Accept <a href="#">Terms and Conditions
+              </label>
+              <% if(locals.errors && errors.terms){ %>
+                <div class="text-danger">
+                  <%= errors.terms.msg %>
+                </div>
+                <% } %>
+            </div>
+
+          </div>
+
+          <div class="index-button-container">
+            <button class="index-button" type="submit">Register</button><button class="index-button"
+              type="reset">Clear</button>
+          </div>
+
+        </form>
+
+      </div>
+
+    </main>
+
+    <%- include('../partials/footer') %>
+
+</body>
+
+</html>

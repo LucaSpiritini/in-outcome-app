@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head') %>
+    <title>Profile</title>
+</head>
+
+<body class="index-body">
+  <%- include('../partials/header') %>
+    <main class="main-profile">
+
+      <div class="user-info-container">
+        <div class="user-icon">
+          <i class="fa-regular fa-user"></i>
+        </div>
+        <div class="user-info">
+          <h2>
+            <%= user.name %>
+          </h2>
+          Currency: <%= user.currency %>
+          <a href="/users/edit/<%= user.user_id%>">Edit profile</a>
+        </div>
+      </div>
+
+      <div class="current-balance">
+        <div>
+          <div>
+            <h3>Current balance</h3>
+            <div class="<%= balance < 0 ? 'negative' : 'positive' %>">
+              $ <%= balance %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lastest-records">
+        <h3 class="lastest-records-title">Lastest records</h3>
+        <div>
+          <% user.transactions.forEach(transaction=> { %>
+            <div class="each-income">
+              <% if(transaction.type=='Income' ) { %>
+                <a href="/transactions/type/1"><i class="fa-solid fa-square-plus positive"></i></a>
+                <% } else {%>
+                  <a href="/transactions/type/2"><i class="fa-solid fa-square-minus negative"></i></a>
+                  <% }%>
+                    <div>
+                      <%= transaction.date%>
+                    </div>
+                    <div>
+                      <%= transaction.amount%>
+                    </div>
+                    <a href="/transactions/detail/<%= transaction.transaction_id%>">
+                      <i class="fa-solid fa-angles-right more"></i>
+                    </a>
+            </div>
+            <% }) %>
+        </div>
+      </div>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+
+</html>
