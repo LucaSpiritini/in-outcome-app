@@ -103,7 +103,7 @@ nav {
 }
 
 .index-button-container {
-  padding: 60px;
+  padding: 30px;
 }
 
 .index-button {
@@ -139,7 +139,15 @@ nav {
 }
 
 .inputs-container {
-  padding-top: 40px;
+  padding-top: 20px;
+}
+
+.terms-conditions-container {
+  padding-top: 15px;
+}
+
+.terms-conditions-text {
+  color: #999;
 }
 
 /* ---- FOOTER ---- */
