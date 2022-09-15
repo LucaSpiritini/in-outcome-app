@@ -4,21 +4,21 @@
     <%- include('partials/head') %> 
     <title>Home Page</title>
   </head>
-  <body>
-    <%- include('partials/header') %> 
 
+  <body class="index-body">
+    <%- include('partials/header') %>
     
-    <main>
-      <div class="home-main">
-        <h1 class="h1-home">Sign in</h1>
-        <div class="flexbox-main">
-          <button class="main-button"><a href="/users/login">Sign In</a></button>
-          <button class="main-button"><a href="/users/register">Register</a></button>
+    <main class="index-main-container">
+      <div class="index-container">
+        <h1 class="index-title">Welcome</h1>
+        <div class="index-button-container">
+          <button class="index-button"><a href="/users/login">Sign In</a></button>
+          <button class="index-button"><a href="/users/register">Register</a></button>
         </div>
       </div>
-    </main>
-    
+    </main>    
 
-    <%- include('partials/footer') %> 
+    <%- include('partials/footer') %>
   </body>
+
 </html>
