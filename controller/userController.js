@@ -34,7 +34,7 @@ const userController = {
               return res.render("user/registerForm", {
                 currencies: response.data, errors: {
                   email: {
-                    msg: 'User already register'
+                    msg: 'Already registered'
                   }
                 }
               });
