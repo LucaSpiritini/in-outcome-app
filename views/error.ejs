@@ -1,3 +1,26 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include('partials/head') %>
+    <title>Not Found</title>
+</head>
+
+<body class="index-body">
+  <%- include('partials/header') %>
+
+    <main class="index-main-container">
+      <div class="error-index">
+        <h1 class="error-page-title">Page not found</h1>
+      </div>
+      <div class="error-page-link">
+        <a href="http://localhost:3000">
+          <p>Go to home page</p>
+        </a>
+      </div>
+    </main>
+
+    <%- include('partials/footer') %>
+</body>
+
+</html>

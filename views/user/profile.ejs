@@ -11,22 +11,34 @@
     <main class="main-profile">
 
       <div class="user-info-container">
+
         <div class="user-icon">
-          <i class="fa-regular fa-user"></i>
+          <i class="fa-solid fa-ghost"></i>
         </div>
+
         <div class="user-info">
-          <h2>
-            <%= user.name %>
-          </h2>
-          Currency: <%= user.currency %>
-          <a href="/users/edit/<%= user.user_id%>">Edit profile</a>
+
+          <div class="name-edit-icon">
+            <h2>
+              <%= user.name %>
+            </h2>
+            <a href="/users/edit/<%= user.user_id%>">
+              <i class="fa-regular fa-pen-to-square"></i>
+            </a>
+          </div>
+
+          <div class="currency">
+            Currency: <%= user.currency %>
+          </div>
+
         </div>
+
       </div>
 
       <div class="current-balance">
         <div>
-          <div>
-            <h3>Current balance</h3>
+          <div class="<%= balance < 0 ? 'current-balance-container-negative' : 'current-balance-container-positive' %>">
+            <h3 class="<%= balance < 0 ? 'current-balance-text-negative' : 'current-balance-text-positive' %>">Balance</h3>
             <div class="<%= balance < 0 ? 'negative' : 'positive' %>">
               $ <%= balance %>
             </div>
@@ -40,9 +52,9 @@
           <% user.transactions.forEach(transaction=> { %>
             <div class="each-income">
               <% if(transaction.type=='Income' ) { %>
-                <a href="/transactions/type/1"><i class="fa-solid fa-plus"></i></a>
+                <a href="/transactions/type/1"><i class="fa-solid fa-plus green"></i></a>
                 <% } else {%>
-                  <a href="/transactions/type/2"><i class="fa-solid fa-minus"></i></a>
+                  <a href="/transactions/type/2"><i class="fa-solid fa-minus red"></i></a>
                   <% }%>
                     <div>
                       <%= transaction.date%>

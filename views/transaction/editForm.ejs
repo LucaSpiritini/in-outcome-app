@@ -6,17 +6,20 @@
     <title>Edit transaction</title>
 </head>
 
-<body>
+<body class="index-body">
 
   <%- include('../partials/header') %>
 
-    <main>
-      <div class="form-container">
-        <form class="forms" action="/transactions/edit/<%=transaction.transaction_id%>?_method=PUT" method="POST">
-          <h2>Edit transaction</h2>
+    <main class="index-main-container">
+
+      <div class="index-container">
+
+        <form action="/transactions/edit/<%=transaction.transaction_id%>?_method=PUT" method="POST">
+
+          <h1 class="index-title">Edit transaction</h1>
+
           <div>
-            <label>Select type</label>
-            <select class="form-input" name="type">
+            <select class="login-input" name="type">
               <option value="Income" <%='Income'==transaction.type ? "selected" : "" %>>Income</option>
               <option value="Expense" <%='Expense'==transaction.type ? "selected" : "" %>>Expense</option>
             </select>
@@ -26,24 +29,27 @@
               </div>
               <% } %>
           </div>
+
           <div>
-            <input class="form-input" type="number" name="amount" placeholder="Amount" value="<%= transaction.amount%>">
+            <input class="login-input" type="number" name="amount" placeholder="Amount" value="<%= transaction.amount%>">
             <% if(locals.errors && errors.amount){ %>
               <div class="text-danger">
                 <%= errors.amount.msg %>
               </div>
               <% } %>
           </div>
+
           <div>
-            <input class="form-input" type="date" name="date" placeholder="Date" value="<%= transaction.date%>">
+            <input class="login-input" type="date" name="date" placeholder="Date" value="<%= transaction.date%>">
             <% if(locals.errors && errors.date){ %>
               <div class="text-danger">
                 <%= errors.date.msg %>
               </div>
               <% } %>
           </div>
+
           <div>
-            <input class="form-input" type="text" name="description" placeholder="Description"
+            <input class="login-input" type="text" name="description" placeholder="Description"
               value="<%= transaction.description%>">
             <% if(locals.errors && errors.description){ %>
               <div class="text-danger">
@@ -51,9 +57,9 @@
               </div>
               <% } %>
           </div>
+
           <div>
-            <label>Select Category</label>
-            <select class="form-input" name="category_id">
+            <select class="login-input" name="category_id">
               <% categories.forEach(category=> { %>
                 <option value="<%=category.category_id%>" <%=category.category_id==transaction.category.category_id
                   ? "selected" : "" %>><%= category.name%>
@@ -66,10 +72,16 @@
               </div>
               <% } %>
           </div>
-          <button type="reset">Reset</button>
-          <button type="submit">Edit</button>
+
+          <div class="index-button-container">
+            <button class="index-button" type="submit">Edit</button>
+            <button class="index-button" type="reset">Reset</button>
+          </div>
+
         </form>
+
       </div>
+
     </main>
 
     <%- include('../partials/footer') %>
