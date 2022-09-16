@@ -10,18 +10,18 @@
 
   <%- include('../partials/header') %>
 
-    <main class="index-main-container">
-      <div>
-        <div> <a href="/transactions/edit/<%= transaction.transaction_id%>">Edit transaction</a></div>
-        <div> <a href="/transactions/delete/<%= transaction.transaction_id%>">Delete transaction</a></div>
-      </div>
-      <div>
-        <article>
-          <h3 class="<%=transaction.category.color%>">
+    <main class="index-main-container">      
+
+      <div class="child-container">
+
+        <div>
+
+          <h3 class="index-title">
             <%= transaction.type %>
           </h3>
+
           <div class="transactions-details">
-            <div class="transactions-more">
+            <div class="">
               <div>
                 Date: <%= transaction.date%>
               </div>
@@ -32,13 +32,23 @@
                 Description: <%= transaction.description%>
               </div>
               <div>
-                Category: <a href="/transactions/category/<%= transaction.category.category_id%>">
+                Category: 
+                <a href="/transactions/category/<%= transaction.category.category_id%>">
                   <%= transaction.category.name %>
-                </a></div>
+                </a>
+              </div>
             </div>
           </div>
-        </article>
+
+        </div>
+
+        <div class="edit-delete-container">
+          <div><a href="/transactions/edit/<%= transaction.transaction_id%>"><i class="fa-solid fa-pen-to-square"></i></a></div>
+          <div><a href="/transactions/delete/<%= transaction.transaction_id%>"><i class="fa-solid fa-trash-can"></i></a></div>
+        </div>
+
       </div>
+
     </main>
 
     <%- include('../partials/footer') %>

@@ -40,9 +40,9 @@
           <% user.transactions.forEach(transaction=> { %>
             <div class="each-income">
               <% if(transaction.type=='Income' ) { %>
-                <a href="/transactions/type/1"><i class="fa-solid fa-square-plus positive"></i></a>
+                <a href="/transactions/type/1"><i class="fa-solid fa-plus"></i></a>
                 <% } else {%>
-                  <a href="/transactions/type/2"><i class="fa-solid fa-square-minus negative"></i></a>
+                  <a href="/transactions/type/2"><i class="fa-solid fa-minus"></i></a>
                   <% }%>
                     <div>
                       <%= transaction.date%>

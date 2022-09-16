@@ -6,27 +6,36 @@
     <title>Type</title>
 </head>
 
-<body>
+<body class="index-body">
 
   <%- include('../partials/header') %>
 
-    <main>
-      <div class="info">
-        <div> <a href="/transactions/add">Add transaction</a></div>
+    <main class="index-main-container">
+      <div class="add-transaction-title-container">
+        <h3 class="lastest-records-title">
+          <%=typeCode%>
+        </h3>
+        <div class="add-transaction-title">
+          <a href="/transactions/add">
+            Add one <i class="fa-solid fa-plus"></i>
+          </a>
+        </div>
       </div>
-      <div class="flexbox-profile">
-        <article class="transactions-container">
-          <h3>
-            <%=typeCode%>s
-          </h3>
-          <div class="transactions-details">
+
+      <div>
+          
+          <div class="transactions-container">
             <% transactions.forEach(transaction=> {
               if(transaction.user_id == locals.userLogged.user_id) {%>
-              <div class="transactions">
+              <div class="each-income-transactions">
                 <% if(transaction.type=='Income' ) { %>
-                  <a href="/transactions/type/1"><i class="fa-solid fa-square-plus positive"></i></a>
+                  <a href="/transactions/type/1">
+                    <i class="fa-solid fa-plus"></i>
+                  </a>
                   <% } else {%>
-                    <a href="/transactions/type/2"><i class="fa-solid fa-square-minus negative"></i></a>
+                    <a href="/transactions/type/2">
+                      <i class="fa-solid fa-minus"></i>
+                    </a>
                     <% }%>
                       <div>
                         <%= transaction.date%>
@@ -34,12 +43,12 @@
                       <div>
                         <%= transaction.amount%>
                       </div>
-                      <a href="/transactions/detail/<%= transaction.transaction_id%>"><i
-                          class="fa-solid fa-angles-right more"></i></a>
+                      <a href="/transactions/detail/<%= transaction.transaction_id%>">
+                        <i class="fa-solid fa-angles-right more"></i>
+                      </a>
               </div>
               <% }}) %>
           </div>
-        </article>
       </div>
     </main>
 
