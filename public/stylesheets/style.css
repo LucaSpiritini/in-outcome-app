@@ -413,6 +413,11 @@ nav {
 
   .lastest-records {
     padding-top: 30px;
+    margin-bottom: 80px;
+  }
+
+  .each-income-transactions {
+    width: 90vw;
   }
 
   /* ---- FOOTER ---- */
